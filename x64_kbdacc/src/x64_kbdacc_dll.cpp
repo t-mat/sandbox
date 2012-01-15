@@ -24,10 +24,7 @@
 #error This code must be compiled at 'x64' project environment.
 #endif
 
-#pragma section(".shared", read, write, shared, nocache)
-#pragma data_seg(".shared")
 HHOOK	hook = 0;
-#pragma data_seg()
 
 
 
@@ -363,9 +360,7 @@ class KbdAcc {
 public:
 	static void attach(HINSTANCE hInstDll) {
 		if(instance == 0) {
-			hg = GlobalAlloc(GMEM_FIXED, sizeof(*instance));
-			void* p = GlobalLock(hg);
-			instance = new (p) KbdAcc;
+			instance = new KbdAcc;
 			instance->init(hInstDll);
 		}
 	}
@@ -375,10 +370,6 @@ public:
 			instance->cleanup();
 			delete instance;
 			instance = 0;
-
-			GlobalUnlock(hg);
-			GlobalFree(hg);
-			hg = 0;
 		}
 	}
 
@@ -389,11 +380,9 @@ protected:
 	CriticalSection	detachCs;
 	DWORD			lastMsgTime;
 	KbdAccConfig	cfg;
-	static HGLOBAL	hg;
 	static KbdAcc*	instance;
 };
 
-HGLOBAL	KbdAcc::hg			= 0;
 KbdAcc*	KbdAcc::instance	= 0;
 
 
