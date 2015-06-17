@@ -16,17 +16,14 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <style>
-    .t {
-      background-color: #444444;
-    }
-  </style>
+  <link rel="stylesheet" href="jquery-minicolors/jquery.minicolors.css">
 </head>
 <body>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="jquery-minicolors/jquery.minicolors.js"></script>
 
 <div class="container">
   <h3>HUSL Color Mixer</h3>
@@ -34,21 +31,24 @@
 
   <h3>Choose Colors</h3>
 
-  <div style="width:15em; margin-left:3em; ">
-    <div class="input-group">
-      <span class="input-group-addon t">Color #1</span>
-      <input id="color1" class="form-control color t" value="#000000" />
+  <div class="row">
+    <div class="col-md-1 col-xs-0"></div>
+    <div class="col-md-3 col-xs-6">
+      <div class="form-group">
+        <input type="text" readonly id="color1" class="form-control minicolors" style="color:#eee; background-color:#444" data-control="brightness" value="#000000">
+      </div>
     </div>
-    <div class="input-group" style="margin-top:1em;">
-      <span class="input-group-addon t">Color #2</span>
-      <input id="color2" class="form-control color t" value="#000000" />
+    <div class="col-md-3 col-xs-6">
+      <div class="form-group">
+        <input type="text" readonly id="color2" class="form-control minicolors" style="color:#eee; background-color:#444" data-control="brightness" value="#000000">
+      </div>
     </div>
   </div>
 
 
-  <h3>Mixed Colors  <small>Observe HUSL's monotonic lightness.</small></h3>
+  <h3>Mixed Colors  <small>Observe HUSL's monotonic lightness</small></h3>
   <div class="row">
-    <div class="col-md-1"></div>
+    <div class="col-md-1 col-xs-1"></div>
     <div class="col-md-2 col-xs-3">
       <div id="husl">HUSL</div>
       <div class="demo">1</div>
@@ -91,13 +91,11 @@
   <h3>References</h3>
   <ul>
   <li><a href="http://www.husl-colors.org/">HUSL</a></li>
-  <li><a href="http://jscolor.com/">JSColor</a></li>
   <li><a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">HSL and HSV # Disadvantages</a></li>
   </ul>
 </div>
 
   <script src="husl.js"></script>
-  <script src="jscolor/jscolor.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

@@ -290,4 +290,10 @@ $("input#color1").on("change", changeInputColor);
 $("input#color2").on("change", changeInputColor);
 
 update();
+
+$(".minicolors").minicolors({
+	  theme: 'bootstrap'
+	, control: 'brightness'
+});
+
 });
