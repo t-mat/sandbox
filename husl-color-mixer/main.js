@@ -281,7 +281,7 @@ function changeInputColor(e) {
 	update();
 }
 
-color1 = "#fff000";
+color1 = "#ffff00";
 color2 = "#ff00ff";
 
 $("input#color1").val(color1);

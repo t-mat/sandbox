@@ -30,21 +30,23 @@
 
 <div class="container">
   <h3>HUSL Color Mixer</h3>
+
+
   <h3>Choose Colors</h3>
 
   <div style="width:15em; margin-left:3em; ">
     <div class="input-group">
       <span class="input-group-addon t">Color #1</span>
-      <input type="color" id="color1" class="form-control t" value="#000" />
+      <input id="color1" class="form-control color t" value="#000000" />
     </div>
     <div class="input-group" style="margin-top:1em;">
       <span class="input-group-addon t">Color #2</span>
-      <input type="color" id="color2" class="form-control t" value="#000" />
+      <input id="color2" class="form-control color t" value="#000000" />
     </div>
   </div>
 
-  <h3>Mixed Colors</h3>
 
+  <h3>Mixed Colors  <small>Observe HUSL's monotonic lightness.</small></h3>
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-2 col-xs-3">
@@ -84,9 +86,18 @@
       <div class="demo">9</div>
     </div>
   </div>
+
+
+  <h3>References</h3>
+  <ul>
+  <li><a href="http://www.husl-colors.org/">HUSL</a></li>
+  <li><a href="http://jscolor.com/">JSColor</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">HSL and HSV # Disadvantages</a></li>
+  </ul>
 </div>
 
   <script src="husl.js"></script>
+  <script src="jscolor/jscolor.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
