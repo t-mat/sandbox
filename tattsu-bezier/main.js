@@ -118,6 +118,7 @@ function moveBounce(e) {
 
 /////////////////////////////////////////////////////////////////////////////
 function Player(x, y) {
+    this.className      = "Player";
     this.x              = x;
     this.y              = y;
     this.vx             = +1.9;
@@ -138,7 +139,7 @@ Player.prototype.update = function() {
     if(shotFlag) {
         var that = this;
         global.entities.every(function(obj) {
-            if(obj.constructor.name == 'Enemy') {
+            if(obj.className == 'Enemy') {
                 that.shotCounter += 1;
                 that.shotCounter %= that.shotCounterMax;
                 var a = (that.shotCounter / (that.shotCounterMax-1)) * 2.0 - 1.0;
@@ -158,6 +159,7 @@ Player.prototype.render = function() {
 
 /////////////////////////////////////////////////////////////////////////////
 function Enemy(x, y) {
+    this.className = "Enemy";
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -185,6 +187,7 @@ Enemy.prototype.render = function() {
 /////////////////////////////////////////////////////////////////////////////
 function Shot(x, y, a, enemyId) {
     var hitTimeInSeconds = 0.75;
+    this.className  = "Shot";
     this.p0         = { x: x, y: y};
     this.p1         = { x: x + a*global.width, y: y+150 };
     this.enemyId    = enemyId;
